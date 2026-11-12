@@ -4,7 +4,7 @@
 
 CyberHealth ist eine Webapplikation, die Gesundheitseinrichtungen dabei unterstützt, die Anforderungen der EU-Richtlinie **NIS2** und des österreichischen **NISG** zu erfüllen. IT-Systeme und medizinische Geräte werden zentral erfasst, mit bekannten Schwachstellen abgeglichen und für Audits dokumentiert.
 
-> ⚠️ **Hinweis:** Da CyberHealth in Kooperation mit Cyber Security Austria entstanden ist, wird der Quellcode hier bewusst nicht veröffentlicht.
+> **Hinweis:** Da CyberHealth in Kooperation mit Cyber Security Austria entstanden ist, wird der Quellcode hier bewusst nicht veröffentlicht.
 ---
 
 ## Ausgangslage
@@ -35,7 +35,7 @@ Umgesetzt nach den drei Schutzzielen der CIA-Triade (Vertraulichkeit, Integritä
 
 ## Architektur
 
-![Systemarchitektur von CyberHealth](docs/architektur.png)
+![Systemarchitektur von CyberHealth](architektur.svg)
 
 Alle Komponenten laufen als Docker-Container in einem Docker Swarm. Der Browser kommuniziert ausschließlich per HTTPS mit dem NGINX Reverse Proxy, der die TLS-Verbindung terminiert und Anfragen an das Spring-Boot-Backend oder den Client weiterleitet. Keycloak übernimmt die Anmeldung, das Backend gleicht Assets über die EUVD-API der ENISA ab und speichert sensible Felder verschlüsselt in PostgreSQL.
 
