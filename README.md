@@ -15,18 +15,18 @@ Das Gesamtsystem wurde auf **zwei Diplomarbeiten** aufgeteilt:
 
 | | Team | Schwerpunkt |
 |---|---|---|
-| **Teil 1 – CyberHealth** | Alice Hristov, Sudenur Yildiz, Fatma Yilmaz, Klara Leal Bukowska | Asset-Erfassung (CMDB), EUVD-Abgleich, Sicherheitsarchitektur, Containerisierung, Berichte |
+| **Teil 1 – CyberHealth** | Alice Hristov, Sudenur Yildiz, Fatma Yilmaz, Klara Leal Bukowska | Asset-Erfassung (DB), EUVD-Abgleich, Sicherheitsarchitektur, Containerisierung, Berichte |
 | **Teil 2** | zweites Diplomarbeitsteam | Vertiefte Schwachstellenanalyse und GAP-Bericht mit Handlungsempfehlungen |
 
 ---
 
 ## Mein Teil – Alice Hristov
 
-**Thema:** *Modellierung der zentralen CMDB zur Erfassung von IT-Assets inkl. sicherer Speicherung und Zugriffsbeschränkung durch Verschlüsselung*
+**Thema:** *Modellierung der zentralen DB zur Erfassung von IT-Assets inkl. sicherer Speicherung und Zugriffsbeschränkung durch Verschlüsselung*
 
 Umgesetzt nach den drei Schutzzielen der CIA-Triade (Vertraulichkeit, Integrität, Verfügbarkeit):
 
-- **CMDB-Modellierung** – Datenmodell zur zentralen Erfassung von IT-Assets und medizinischen Geräten als Datenbasis für die Schwachstellenbewertung
+- **DB-Modellierung** – Datenmodell zur zentralen Erfassung von IT-Assets und medizinischen Geräten als Datenbasis für die Schwachstellenbewertung
 - **Feldgranulare Verschlüsselung** – sensible Felder (z. B. Seriennummern, Schwachstellenbeschreibungen) werden mit **AES-256-GCM** über **Jasypt** und einen **JPA-Converter** verschlüsselt, bevor sie gespeichert werden. Die Technologie wurde per Nutzwertanalyse ausgewählt.
 - **Verschlüsselte Übertragung** – **NGINX** als Reverse Proxy mit TLS-Terminierung und automatischer Weiterleitung von HTTP auf HTTPS
 - **Identity & Access Management** – **Keycloak** als Identity Provider mit OAuth2 / OpenID Connect, JWT-basierter Authentifizierung, rollenbasierter Zugriffskontrolle (RBAC) und Zwei-Faktor-Authentifizierung
